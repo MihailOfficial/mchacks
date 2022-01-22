@@ -4,7 +4,7 @@ window.onload = function displayList(){
    var num = 0;
    for(i=0;i<9;i++){
      const src = "/images/"+num;
-      html += '<tr><td><img src="'+src+'.png" width="80px"/></td></tr>'
+      html += '<tr><td><div class="polaroid"> <a href="#" title="Santorini"><img src="'+src+'.png" width="80px" title="Santorini"/></a></div></td></tr>'
       num += 1;
    }
   document.getElementById("guestview").innerHTML= html
