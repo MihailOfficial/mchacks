@@ -2,7 +2,7 @@
   "name": "MeGallery",
   "description": "A browser action with a popup dump of all bookmarks, including search, add, edit and delete.",
   "options_page": "temp1.html",
-  "version": "1.1",
+  "version": "0.01",
   "manifest_version": 3,
   "chrome_url_overrides":{
     "newtab": "newtab.html"

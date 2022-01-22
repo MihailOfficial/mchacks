@@ -3,6 +3,7 @@ window.onload = function displayList(){
    let html ='';
    for(i=0;i<entries.length;i++){
        let img = entries[i]
+       console.log(img);
        let src=img.slice(51)
     html += '<tr><td><img src="'+src+'"class="sticker"/></td></tr>'
    }
