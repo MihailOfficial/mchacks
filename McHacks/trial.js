@@ -1,17 +1,10 @@
-
-    console.log("hello");
-    var dir = "images/";
-    var fileextension = ".png";
-  $.ajax({
-    //This will retrieve the contents of the folder if the folder is configured as 'browsable'
-    url: dir,
-    success: function (data) {
-      console.log("hello");
-        //List all .png file names in the page
-        $(data).find("a:contains(" + fileextension + ")").each(function () {
-            var filename = this.href.replace(window.location.host, "").replace("http://", "");
-            console.log("hello");
-            $("body").append("<img src='" + dir + filename + "'>");
-        });
-    }
-  });
+window.onload = function displayList(){
+  let entries = JSON.parse(localStorage.getItem('saved-sticker'))
+   let html ='';
+   for(i=0;i<entries.length;i++){
+       let img = entries[i]
+       let src=img.slice(51)
+    html += '<tr><td><img src="'+src+'"class="sticker"/></td></tr>'
+   }
+  document.getElementById("guestview").innerHTML= html
+ }
