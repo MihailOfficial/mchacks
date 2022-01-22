@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+html{
+  background-color: rgba(120, 151, 66, 0.534);
+  font-family: "Roboto", sans-serif;
+  color: whitesmoke;
+}
   .hidden {
     display: none;
   }
@@ -16,14 +23,17 @@
     margin: 0;
   }
   
-  canvas {
+  /* canvas {
+    content: c
     width: 100px;
     
-  }
+  } */
   
-  img {
+  img.logo {
     display: block;
-    margin: 0 0 20px 0;
+    margin: auto;
+    width: 8%;
+    margin-bottom: 25px;
   }
   
   input#zoom {
