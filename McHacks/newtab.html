@@ -4,19 +4,45 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sticking Validation</title>
+  <title>meGallery</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Libre+Franklin&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
-  
-  <script src ="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="main.css" />
  
   </head>
 
 <body>
-  <p>hi!</p>
+
+  <table>
+    <thread>
+      <h1>my gallery</h1>
+    </thread>
+    <tbody>
+      <tr id="gallery_div"></tr>
+    </tbody>
+  </table>
+
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyCdLzIiuFzx-J0wFMmrxQbHynz_VPsxcyM",
+      authDomain: "mchacks-86ae7.firebaseapp.com",
+      projectId: "mchacks-86ae7",
+      storageBucket: "mchacks-86ae7.appspot.com",
+      messagingSenderId: "768049515199",
+      appId: "1:768049515199:web:c31e37b010b574f463940a",
+      measurementId: "G-K9Q66PK3YQ"
+    };
+    firebase.initializeApp(config);
+  </script>
+  
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script type="text/javascript" src="trial.js"></script>
+
+
+
   
 </body>
 
