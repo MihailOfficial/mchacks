@@ -5,6 +5,26 @@
 
 let timerElement = document.getElementById('timer');
 let time = 200;
+var store = ["drink a liquid",
+  "find something yellow",
+  "jump!",
+  "make a heart",
+  "draw a cat",
+  "find a blue pen",
+  "put on some lip balm",
+  "get a snack",
+  "find a book",
+  "find the first letter of your name",
+  "find a pet/plant",
+  "stretch",
+  "put on hand cream",
+  " draw your favorite food",
+  "find something soft",
+  "find something green",
+  "draw a capybara",
+  "make a paper plane",
+  "show your outfit"];
+var ranVal = store[Math.floor(Math.random() * 18)];
 
 function removeWindow(win) {
   targetWindow = win;
@@ -49,7 +69,7 @@ document.getElementById("down").addEventListener("click", function() {
         document.body.appendChild(anchor);
         var url = window.URL.createObjectURL(blob);
         anchor.href = url;
-        anchor.download = 'capture.png';
+        anchor.download = '18,'+ranVal+'.png';
         anchor.click();
         window.setTimeout(() => {
             window.URL.revokeObjectURL(url);
@@ -57,24 +77,5 @@ document.getElementById("down").addEventListener("click", function() {
            }, 100);
         }, 'image/png')
 });
-var store = ["drink a liquid",
-  "find something yellow",
-  "jump!",
-  "make a heart",
-  "draw a cat",
-  "find a blue pen",
-  "put on some lip balm",
-  "get a snack",
-  "find a book",
-  "find the first letter of your name",
-  "find a pet/plant",
-  "stretch",
-  "put on hand cream",
-  " draw your favorite food",
-  "find something soft",
-  "find something green",
-  "draw a capybara",
-  "make a paper plane",
-  "show your outfit"];
 
-document.getElementById("demo").innerHTML = store[Math.floor(Math.random() * 18)];
+document.getElementById("demo").innerHTML = ranVal;
