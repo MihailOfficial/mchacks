@@ -1,27 +1,34 @@
 window.onload = function displayList() {
   const prompt = [
     "drink a liquid",
-    "find something yellow",
-    "jump!",
-    "make a heart",
     "draw a cat",
-    "find a blue pen",
-    "put on some lip balm",
+    "show a book",
+    "show your pet",
+    "show something soft",
     "get a snack",
-    "find a book",
-    "find the first letter of your name",
-    "find a pet/plant",
+    "show a plant",
+    "smile!",
+    "show off your outfit",
+    "stretch",
+    "get the first letter of your name",
+    "get a fruit",
+    "get a coloured pencil",
+    "draw a heart",
+    "show your pet",
+    "jump!",
+    "put on some hand cream",
+    "make a paper airplane",
   ];
 
   let entries = JSON.parse(localStorage.getItem("saved-sticker"));
   let html = "";
   var num = 0;
-  for (i = 0; i < 9; i++) {
+  for (i = 0; i < 18; i++) {
     const src = "/images/" + num;
     html +=
       '<div class="flip-card"><div class="flip-card-inner"><div class="polaroid"> <a href="#" title= "22/01/22"><img src="' +
       src +
-      '.png" class="memories" title="Santorini"/></a></div><div class="flip-card-back"><h2>" ' +
+      '.jpg" class="memories" title="Santorini"/></a></div><div class="flip-card-back"><h2>" ' +
       prompt[num] +
       ' "</h2></div></div></div>';
 
