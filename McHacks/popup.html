@@ -5,12 +5,10 @@
   <link rel="stylesheet" href="popup.css">
   <style>
     body {
-      width: 290px;
-      height: 100%;
-      margin: 0;
-      background-color: rgba(253, 207, 179, 1);
-      border: #ffffff solid 8px;
-
+      width: 200px;
+     color: white;
+      background-color: rgb(228, 181, 151);
+  
       overflow-y: hidden;
     }
     #counter {
@@ -27,6 +25,18 @@
       box-shadow: 1px 1px 1px #333;
       background-color: rgba(206, 200, 228, 1);
       font-size: 1.4em;
+      
+      text-transform: capitalize;
+    }
+    .switch {
+      min-width: 90px;
+      padding: 0.5em 0.75em;
+      outline: none;
+      border: none;
+      border-radius: 4px;
+      box-shadow: 1px 1px 1px #333;
+      background-color: rgba(206, 200, 228, 1);
+      font-size: 1.0em;
       
       text-transform: capitalize;
     }
@@ -47,7 +57,7 @@
 <link rel="stylesheet" href="popup.css" />
 <body class="p1">
   <br>
-<h1 style="text-align: center;">Rest Stop</h1>
+<h1 style="text-align: center;">just a sec</h1>
   
   <div class="center">
   <div class="ph2 button-box">
@@ -56,13 +66,11 @@
     
   </div>
 </div>
-  <br> <br> <br> <br>
-  <div id="test"><video id="video" width="250" height="200"  autoplay></video></div>
-  <button id="snap">Snap Photo</button>
-  <button id="down">Download Photo</button>
-  <button id="gall">Add to gallary</button>
+  <br> <br> <br> 
   
-  <canvas id="canvas"></canvas>
+  
+  
+  
   <script src="helpers.js"></script>
   <script src="popup.js"></script>
 </body>
