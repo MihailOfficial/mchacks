@@ -25,8 +25,9 @@ window.onload = function displayList() {
   var num = 0;
   for (i = 0; i < 18; i++) {
     const src = "/images/" + num;
+    var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
     html +=
-      '<div class="flip-card"><div class="flip-card-inner"><div class="polaroid"> <a href="#" title= "22/01/22"><img src="' +
+      '<div class="flip-card" style="margin-top: ' + plusOrMinus*Math.floor(Math.random() * 20) + 'px; transform: rotate(' + plusOrMinus*Math.floor(Math.random() * 4) + 'deg);"><div class="flip-card-inner"><div class="polaroid"> <a href="#" title= "22/01/22"><img src="' +
       src +
       '.jpg" class="memories" title="Santorini"/></a></div><div class="flip-card-back"><h2>" ' +
       prompt[num] +
