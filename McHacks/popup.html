@@ -6,9 +6,11 @@
   <style>
     body {
       width: 290px;
+      height: 100%;
       margin: 0;
-      background-color: rgba(120, 151, 66, 0.534);
-      border: #414141 solid 2px;
+      background-color: rgba(253, 207, 179, 1);
+      border: #ffffff solid 8px;
+
       overflow-y: hidden;
     }
     #counter {
@@ -23,16 +25,17 @@
       border: none;
       border-radius: 4px;
       box-shadow: 1px 1px 1px #333;
-      background-color: coral;
+      background-color: rgba(206, 200, 228, 1);
       font-size: 1.4em;
+      
       text-transform: capitalize;
     }
     #switch.is-not-paused {
-      color: bisque;
+      color: rgb(53, 53, 53);
     }
     #switch.is-paused {
-      color: coral;
-      background-color: bisque;
+      color: rgb(150, 48, 48);
+  
     }
     .title-box {
       text-align: right;
@@ -43,21 +46,22 @@
 
 <link rel="stylesheet" href="popup.css" />
 <body class="p1">
-<h1>Rest Stop</h1>
-  <div class="flex flex--center">
-    <div class="pv1ph2 title-box">
-      
-    </div>
-    <div class="ph2 button-box">
-      <p id="counter">&nbsp;</p>
-      <button id="switch" class="is-not-paused">Pause</button>
-    </div>
+  <br>
+<h1 style="text-align: center;">Rest Stop</h1>
+  
+  <div class="center">
+  <div class="ph2 button-box">
+    <p id="counter">&nbsp;</p>
+   <div class="container"><button id="switch" class="is-not-paused" >Pause</button></div>
+    
   </div>
+</div>
   <br> <br> <br> <br>
-  <video id="video" width="300" height="200"  autoplay></video>
+  <div id="test"><video id="video" width="250" height="200"  autoplay></video></div>
   <button id="snap">Snap Photo</button>
   <button id="down">Download Photo</button>
   <button id="gall">Add to gallary</button>
+  
   <canvas id="canvas"></canvas>
   <script src="helpers.js"></script>
   <script src="popup.js"></script>
