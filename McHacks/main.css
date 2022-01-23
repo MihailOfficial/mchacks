@@ -6,6 +6,8 @@ body {
 
 h1 {
   font-size: 50px;
+  margin: 5px;
+  padding: 0;
 }
 
 h2 {
@@ -13,6 +15,15 @@ h2 {
   font-size: 30px;
 }
 
+p {
+  font-size: 22px;
+  margin: 0;
+  padding: 5px;
+}
+
+#reststop-log {
+  border-radius: 8%; width: 100px; padding: 10px;
+}
 .flip-card {
   background-color: transparent;
   width: 300px;
