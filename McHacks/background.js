@@ -1,32 +1,46 @@
-// Extension event listeners are a little different from the patterns you may have seen in DOM or
-// Node.js APIs. The below event listener registration can be broken in to 4 distinct parts:
-//
-// * chrome      - the global namespace for Chrome's extension APIs
-// * runtime     – the namespace of the specific API we want to use
-// * onInstalled - the event we want to subscribe to
-// * addListener - what we want to do with this event
-//
-// See https://developer.chrome.com/docs/extensions/reference/events/ for additional details.
-chrome.runtime.onInstalled.addListener(async () => {
+let date = Date.now();
+let countdownMaxInMin = 1;
+let countdownMaxInSec = countdownMaxInMin * 60;
+let countdownMaxInMS = countdownMaxInSec * 1000;
 
-  // While we could have used `let url = "hello.html"`, using runtime.getURL is a bit more robust as
-  // it returns a full URL rather than just a path that Chrome needs to be resolved contextually at
-  // runtime.
-  let url = chrome.runtime.getURL("hello.html");
+chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
+  chrome.declarativeContent.onPageChanged.addRules([{
+    conditions: [new chrome.declarativeContent.PageStateMatcher({})],
+    actions: [new chrome.declarativeContent.ShowPageAction()]
+  }]);
+});
 
-  // Open a new tab pointing at our page's URL using JavaScript's object initializer shorthand.
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#new_notations_in_ecmascript_2015
-  //
-  // Many of the extension platform's APIs are asynchronous and can either take a callback argument
-  // or return a promise. Since we're inside an async function, we can await the resolution of the
-  // promise returned by the tabs.create call. See the following link for more info on async/await.
-  // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await
-  let tab = await chrome.tabs.create({ url });
+chrome.storage.local.set({
+  date: date,
+  isPaused: false,
+  countdownMaxInMin: countdownMaxInMin
+});
 
-  // Finally, let's log the ID of the newly created tab using a template literal.
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
-  //
-  // To view this log message, open chrome://extensions, find "Hello, World!", and click the
-  // "service worker" link in th card to open DevTools.
-  console.log(`Created tab ${tab.id}`);
+clearAndCreateAlarm(countdownMaxInMin,countdownMaxInMin);
+
+// Add a listener for when the alarm is up.
+// When the alarm is up, create a window with timer.html.
+chrome.alarms.onAlarm.addListener(function(alarm) {
+  if (alarm.name == 'eyeRestAlarm' + date) {
+    let nextAlarmTime = alarm.scheduledTime + countdownMaxInMS;
+    chrome.storage.local.set({nextAlarmTime: nextAlarmTime});
+
+    chrome.windows.create({
+      type: 'popup',
+      url: 'timer.html',
+      width: 500,
+      height: 520,
+      left: 5,
+      top: 100,
+      focused: true
+    });
+  } else {
+    chrome.alarms.getAll(function(data) {
+      data.forEach(function(alarm) {
+        if (alarm.name != 'eyeRestAlarm' + date) {
+          chrome.alarms.clear(alarm.name);
+        }
+      });
+    });
+  }
 });
