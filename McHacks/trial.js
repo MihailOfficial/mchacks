@@ -19,11 +19,11 @@ window.onload = function displayList() {
   for (i = 0; i < 9; i++) {
     const src = "/images/" + num;
     html +=
-      '<div class="flip-card"><div class="flip-card-inner"><div class="polaroid"> <a href="#"><img src="' +
+      '<div class="flip-card"><div class="flip-card-inner"><div class="polaroid"> <a href="#" title= "22/01/22"><img src="' +
       src +
-      '.png" class="memories" title="Santorini"/></a></div><div class="flip-card-back"><h1>" ' +
+      '.png" class="memories" title="Santorini"/></a></div><div class="flip-card-back"><h2>" ' +
       prompt[num] +
-      ' "</h1></div></div></div>';
+      ' "</h2></div></div></div>';
 
     num += 1;
   }
