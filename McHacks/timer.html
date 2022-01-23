@@ -5,10 +5,11 @@
     <link href="styles.css" rel="stylesheet">
     <style>
       body {
-        margin: 0;
+        margin: 20px;
+        height:100%;
         font-size: 1em;
         background-color: rgba(120, 151, 66, 0.534);
-    
+        color: white;
         /* bisque darkturquoise coral mediumspringgreen palegreen turquoise */
       }
       #timer {
@@ -38,23 +39,35 @@
       .content-box {
         border-right: 1px solid #333;
       }
+      .switch {
+      min-width: 90px;
+      padding: 0.5em 0.75em;
+      outline: none;
+      border: none;
+      border-radius: 4px;
+      box-shadow: 1px 1px 1px #333;
+      background-color: rgba(206, 200, 228, 1);
+      font-size: 1.0em;
+      
+      text-transform: capitalize;
+    }
     </style>
   </head>
   <body class="pv1">
     <div class="flex flex--row-reverse p1">
       <div class="flex flex--column pv1 pl2 title-box">
-        <h1>Eye<br>Rest!</h1>
+        <h2>it'll only take just a sec <p id="timer" class="right pv1" style="color:rgb(126, 73, 156)">&nbsp;</p></h2>
         
       </div>
-      <div class="flex flex--column pr2 content-box">
-        <div class="mt5">
-          <p id="timer" class="right pv1">&nbsp;</p>
-          <p class="right">Every 20 minutes</p>
-          <p class="right">Take a 5 min</p>
-
-        </div>
-      </div>
+      <p class="right" style="color:black">Your prompt:</p>
+          <b> <p id="demo" style="color:black"></p></b>
     </div>
+    <video id="video" width="250" autoplay style="transform: rotate(180deg)"></video>
+          <br> 
+          <button id="snap" class="switch">Snap Photo</button>
+          <button id="down"  class="switch">Add to gallery</button>
+         
+          <canvas id="canvas" style="visibility: hidden; "></canvas>
     <script src="timer.js"></script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 {
-  "name": "MeGallery",
+  "name": "just a sec",
   "version": "0.01",
-  "description": "A browser action with a popup dump of all bookmarks, including search, add, edit and delete.",
+  "description": "Why don't you take just a sec to look away?",
   "background": {
     "scripts": ["helpers.js", "background.js"],
     "persistent": false
